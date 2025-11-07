@@ -4,9 +4,24 @@ import './Pricing.css';
 const Pricing = () => {
   const pricingTiers = [
     {
+      icon: '🌟',
+      symbol: '₹',
+      price: '8,000',
+      title: 'Landing Page',
+      description: 'Essential single-page website perfect for freelancers and personal projects.',
+      features: [
+        'Single page design',
+        'Mobile responsive',
+        'Basic SEO setup',
+        'Contact form',
+        '15 days support'
+      ],
+      color: 'teal'
+    },
+    {
       icon: '💼',
-      symbol: '$',
-      price: '5,000',
+      symbol: '₹',
+      price: '15,000',
       title: 'Landing Page Pro',
       description: 'Perfect for startups and small businesses looking to establish their online presence.',
       features: [
@@ -20,8 +35,8 @@ const Pricing = () => {
     },
     {
       icon: '🔧',
-      symbol: '$$',
-      price: '15,000',
+      symbol: '₹₹',
+      price: '40,000',
       title: 'Business Website',
       description: 'Complete web solution for growing businesses with advanced features.',
       features: [
@@ -35,9 +50,9 @@ const Pricing = () => {
       popular: true
     },
     {
-      icon: '�',
-      symbol: '$$$',
-      price: '35,000',
+      icon: '🖥️',
+      symbol: '₹₹₹',
+      price: '85,000',
       title: 'Web Application',
       description: 'Full-featured web applications with custom functionality and user management.',
       features: [
@@ -51,8 +66,8 @@ const Pricing = () => {
     },
     {
       icon: '🏢',
-      symbol: '$$$$',
-      price: '75,000',
+      symbol: '₹₹₹₹',
+      price: '1,75,000',
       title: 'Enterprise Solution',
       description: 'Comprehensive digital platform for large organizations with complex requirements.',
       features: [
@@ -89,7 +104,7 @@ const Pricing = () => {
                 <div className="pricing-info">
                   <div className="price-tag">
                     <span className="price-symbol">{tier.symbol}</span>
-                    <span className="price-amount">From ${tier.price}</span>
+                    <span className="price-amount">From ₹{tier.price}</span>
                   </div>
                   <h3 className="pricing-title">{tier.title}</h3>
                 </div>

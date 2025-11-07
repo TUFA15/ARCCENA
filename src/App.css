@@ -1,0 +1,271 @@
+.App {
+  text-align: center;
+}
+
+/* Global styles for the app - Neon Noir Theme */
+section {
+  padding: 120px 0;
+  margin-bottom: 40px;
+  position: relative;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Remove the section fade-in that was hiding content */
+.hero-section,
+.services-section,
+.statistics-section,
+.development-section,
+.portfolio-section,
+.join-network-section,
+.testimonials-section,
+.pricing-section,
+.footer-section {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes sectionFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add animated separator between sections - More visible version */
+section:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(0, 212, 255, 0.9), 
+    rgba(255, 0, 128, 0.9), 
+    rgba(138, 43, 226, 0.9),
+    rgba(0, 212, 255, 0.9), 
+    transparent
+  );
+  border-radius: 3px;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.6);
+  z-index: 10;
+  animation: separatorGlow 3s ease-in-out infinite;
+}
+
+/* Add flowing particles effect */
+section:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 10px;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+  z-index: 9;
+  animation: particleFlow 6s ease-in-out infinite;
+}
+
+@keyframes separatorExpand {
+  0% { 
+    width: 0;
+    opacity: 0;
+    transform: translateX(-50%) scaleX(0);
+  }
+  100% { 
+    width: 120px;
+    opacity: 1;
+    transform: translateX(-50%) scaleX(1);
+  }
+}
+
+@keyframes separatorGlow {
+  0%, 100% { 
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+    filter: brightness(1);
+  }
+  33% { 
+    box-shadow: 0 0 25px rgba(255, 0, 128, 0.6), 0 0 35px rgba(0, 212, 255, 0.3);
+    filter: brightness(1.3);
+  }
+  66% { 
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.5), 0 0 30px rgba(255, 0, 128, 0.4);
+    filter: brightness(1.1);
+  }
+}
+
+@keyframes particleFlow {
+  0%, 100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(0px);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translateX(-50%) translateY(-5px);
+  }
+}
+
+/* Floating orb decorations */
+.services-section::after,
+.statistics-section::after,
+.development-section::after,
+.portfolio-section::after,
+.join-network-section::after,
+.testimonials-section::after,
+.pricing-section::after {
+  box-shadow: 
+    0 0 20px rgba(0, 212, 255, 0.4),
+    -60px 0 8px rgba(255, 0, 128, 0.2),
+    60px 0 8px rgba(138, 43, 226, 0.2);
+}
+
+/* Pulse animation for interactive sections */
+.services-section::after {
+  animation: separatorExpand 2s ease-out forwards, separatorPulse 3s ease-in-out infinite 2s;
+}
+
+.portfolio-section::after {
+  animation: separatorExpand 2s ease-out forwards, separatorGlow 4s ease-in-out infinite 2s, separatorStretch 6s ease-in-out infinite 3s;
+}
+
+@keyframes separatorPulse {
+  0%, 100% { 
+    transform: translateX(-50%) scale(1);
+    filter: brightness(1);
+  }
+  50% { 
+    transform: translateX(-50%) scale(1.1);
+    filter: brightness(1.3);
+  }
+}
+
+@keyframes separatorStretch {
+  0%, 100% { 
+    width: 120px;
+  }
+  50% { 
+    width: 160px;
+  }
+}
+
+/* Remove margin from hero section */
+.hero-section {
+  margin-bottom: 0;
+}
+
+/* Remove after pseudo-element from footer */
+.footer-section::after {
+  display: none;
+}
+
+.statistics-section {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  color: white;
+}
+
+/* Responsive spacing adjustments */
+@media (max-width: 768px) {
+  section {
+    padding: 80px 0;
+    margin-bottom: 20px;
+  }
+  
+  .hero-section {
+    padding-bottom: 100px;
+  }
+  
+  .services-section,
+  .statistics-section,
+  .development-section,
+  .portfolio-section,
+  .join-network-section,
+  .testimonials-section,
+  .pricing-section {
+    padding: 80px 0;
+  }
+  
+  .footer-section {
+    padding: 80px 0 0 0;
+  }
+  
+  /* Make separator smaller on mobile but keep animations */
+  section:not(:last-child)::after {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, 
+      transparent, 
+      rgba(0, 212, 255, 0.7), 
+      rgba(255, 0, 128, 0.7), 
+      rgba(0, 212, 255, 0.7), 
+      transparent
+    );
+    box-shadow: 0 0 12px rgba(0, 212, 255, 0.4);
+    animation: separatorExpand 1.5s ease-out forwards, separatorGlow 3s ease-in-out infinite 1.5s;
+  }
+  
+  section:not(:last-child)::before {
+    width: 150px;
+    height: 8px;
+  }
+  
+  @keyframes separatorExpand {
+    0% { width: 0; }
+    100% { width: 80px; }
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 60px 0;
+    margin-bottom: 15px;
+  }
+  
+  .hero-section {
+    padding-bottom: 80px;
+  }
+  
+  .services-section,
+  .statistics-section,
+  .development-section,
+  .portfolio-section,
+  .join-network-section,
+  .testimonials-section,
+  .pricing-section {
+    padding: 60px 0;
+  }
+  
+  .footer-section {
+    padding: 60px 0 0 0;
+  }
+  
+  /* Extra small mobile separator with animations */
+  section:not(:last-child)::after {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, 
+      transparent, 
+      rgba(0, 212, 255, 0.6), 
+      rgba(255, 0, 128, 0.6), 
+      transparent
+    );
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+    animation: separatorExpand 1s ease-out forwards, separatorGlow 4s ease-in-out infinite 1s;
+  }
+  
+  section:not(:last-child)::before {
+    width: 120px;
+    height: 6px;
+  }
+  
+  @keyframes separatorExpand {
+    0% { width: 0; }
+    100% { width: 60px; }
+  }
+}

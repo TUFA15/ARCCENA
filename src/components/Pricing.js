@@ -6,7 +6,7 @@ const Pricing = () => {
     {
       icon: '🌟',
       symbol: '₹',
-      price: '8,000',
+      price: '1500',
       title: 'Landing Page',
       description: 'Essential single-page website perfect for freelancers and personal projects.',
       features: [

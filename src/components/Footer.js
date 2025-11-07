@@ -57,15 +57,15 @@ const Footer = () => {
               <div className="contact-info">
                 <div className="contact-item">
                   <span className="contact-icon">📧</span>
-                  <span>contact@arccena.com</span>
+                  <span>arccena2025@gmail.com</span>
                 </div>
                 <div className="contact-item">
                   <span className="contact-icon">📞</span>
-                  <span>+1 214 306 68 37</span>
+                  <span>+91 9673460391</span>
                 </div>
                 <div className="contact-item">
                   <span className="contact-icon">📍</span>
-                  <span>Boston, MA</span>
+                  <span>Pune, Maharashtra</span>
                 </div>
               </div>
             </div>
@@ -135,7 +135,7 @@ const Footer = () => {
               <a href="https://github.com/arccena" className="social-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
                 <span>🐙</span>
               </a>
-              <a href="mailto:contact@arccena.com" className="social-link" aria-label="Email">
+              <a href="mailto:arccena2025@gmail.com" className="social-link" aria-label="Email">
                 <span>📧</span>
               </a>
             </div>
